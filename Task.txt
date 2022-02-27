@@ -1,0 +1,59 @@
+This problem was created for the purpose of coursework by the students. It was not given to solve.
+
+The problem: ” Find the winner “
+You are given a task to find the winner of the contest. The aim of the contest is to find 8 flags
+and reach the finish first. The total distance from start to finish is 3000 meters. They are
+given individual instructions as the flags are hidden in different places for each participant.
+Therefore, the distances between finding the flags are not the same for all participants. Each
+member has a chip that activates when crossing the start and begins register str participant
+ID (ex: 'p1') and a list populated with participant’s records:
+● one dictionary before each stop with int distance as key and int running time as value
+(ex: {493: 162})
+● an str stop noted by 'S' if it was collected a flag or 'F' if it reached the finish.
+Example:
+All participants’ data is stored in a dictionary with participant ID: list of participant’s
+recordings pairs, example below:
+participants = {'p1': [{493: 162}, 'S', {313: 81}, 'S', {431: 85}, 'S', {460: 111}, 'S', {281: 180},
+'S', {457: 83}, 'S', {311: 93}, 'S', {267: 92}, 'S', {439: 89}, 'F'],
+'p2': [{473: 85}, 'S', {440: 90}, 'S', {215: 152}, 'S', {231: 126}, 'S', {205: 100}, 'S',
+{479: 97}, 'S', {355: 116}, 'S', {262: 97}, 'S', {392: 99}, 'F']}
+'p1' and 'p2' - the participants’ id and the key-value,
+{493: 162} – a distance of 493 meters was run in 162 seconds before a stop,
+'S' – 1 flag is collected,
+'F' – the finish is reached.
+Constraints:
+2800 < n < 3300 , where n = Total distance a participant run to reach the finish
+450 < m < 1200 , where m = Total running time a participant takes to reach the finish
+6 < s < 9 , where s = total number of collected flags 'S'
+f = 1 , where f = how many times finish is reached 'F'
+7000 ≤ p ≤ 30000, where p = total number of participants
+Instructions:
+You must find 3 algorithms that will sort the data and will print:
+● ‘The results of the contest are as following:’
+● First 3 participants who reached the finish and collected all the flags each from a new
+line, ex: Place 1: p5
+● A dictionary from a new line containing data of all participants with key as the place
+number ex: 'Place 1’ and the pair value a list containing participant ID as the first
+element and total running time as the second element {'Place 1': ['p5', 953]}. Any
+participant who has less than 8 flags collected, or a total distance less than 3000
+meters must be excluded from the output.
+● Name of the algorithm use and its running time from a new line
+Input Example:
+participants = { 'p1' : [{493: 162}, 'S' , {313: 81}, 'S' , {431: 85}, 'S' , {460: 111}, 'S' , {281: 180}, 'S' , {457:
+83}, 'S' , {311: 93}, 'S' , {267: 92}, 'S' , {439: 89}, 'F' ],
+'p2' : [{473: 85}, 'S' , {440: 90}, 'S' , {215: 152}, 'S' , {231: 126}, 'S' , {205: 100}, 'S' , {479: 97}, 'S' ,
+{355: 116}, 'S' , {262: 97}, 'S' , {392: 99}, 'F' ],
+'p3' : [{213: 116}, 'S' , {216: 181}, 'S' , {369: 148}, 'S' , {315: 80}, 'S' , {478: 84}, 'S' , {453: 84}, 'S' ,
+{396: 98}, 'S' , {378: 93}, 'S' , {334: 96}, 'F' ],
+'p4' : [{456: 105}, 'S' , {489: 119}, 'S' , {316: 84}, 'S' , {356: 93}, 'S' , {282: 158}, 'S' , {290: 88}, 'S' ,
+{491: 119}, 'S' , {472: 110}, 'S' , {215: 87}, 'F' ],
+'p5' : [{318: 95}, 'S' , {486: 88}, 'S' , {367: 99}, 'S' , {472: 115}, 'S' , {451: 161}, 'S' , {293: 96}, 'S' ,
+{430: 121}, 'S' , {415: 93}, 'S' , {281: 85}, 'F' ]}
+Output Example:
+The results of the contest are as follows:
+Place 1 : p5
+Place 2 : p2
+Place 3 : p4
+{'Place 1': ['p5', 953], 'Place 2': ['p2', 962], 'Place 3': ['p4', 963], 'Place 4': ['p1', 976], 'Place 5':
+['p3', 980]}
+Selection sort finished in 0.370463371276855 seconds.

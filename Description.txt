@@ -1,0 +1,36 @@
+There is a python code for generating records named "Records". 
+Bubble sort for this case scenario was adapt by me as individual part of this project. 
+The bubble sort algorithm takes two values from the list and sorts them so that the lowest
+value is at the beginning(left) and the highest at the end(right). We continue swapping
+elements through iterations through list length until the highest value is on the right of the list
+and the lowest on the left (sorted list). The algorithm starts with a while loop that will keep
+sorting through the length list until it is sorted. Next, the “ if “ statement is checking if the
+value to the left is greater than the value to the right (I had to add [1] for each of the values to
+compare the participants' time according to the positions of elements in the list). If values
+meet the condition then we have to swap them to the ‘ 1st . lower value-> 2nd higher value’
+value order. Then we continue the loop until all elements in the list are sorted.
+
+Quicksort code was developed with all team members for this project. Please see below brief description. The algorithm’s
+running time is lower, and it does not require extra space. So, it is the right choice when it
+comes to sorting large arrays. For this solution we have created a function self.partition() ,
+that takes as arguments the list, left and right, divides the list in 2 by accessing only the
+second item of the nested tuples, lst[(low + high) // 2][1] , and selects the middle item as a
+pivot. The elements that are smaller than the middle are moved to the left part of the list, and
+greater to its right. While the left item of the list is smaller than the pivot, it moves to the next
+index. As well as the right item is greater than the pivot, it moves back to the following index
+right -= 1 . If an element at left is larger than the element at right, these are swapped.
+Next function self.quick_sort() , start with creating a new empty dictionary then later will be
+updated with the elements from the sorted list. Then, we convert the dictionary that is
+returned by function self.calculate_results() into a list list_a . Create a helper function
+_quick_sort() that will be called recursively. It takes as arguments the list, left and right. It
+begins with an If statement that tests if low is less than high. For True statements, we call
+self.partition() giving as arguments the same arguments that take helper function
+_quick_sort(), its result stored as the value of the variable split_index . Next 2 lines we call
+_quick_sort() twice. First take as arguments the list, the actual left part of the list and the
+right - the value of the split_index, pivot. Second, take as arguments the list, value of the
+split_index as the left part of the list and the actual right. Outside the helper function, we call
+the helper function giving as arguments list_a, 0 as the left part, and length of the list_a-1 as
+the right part. In this way, we recursively sort the values around the pivot until the entire list
+is sorted. After sorting, we update the empty dictionary with a key as ‘Place { x + 1}’ where x
+is the index of the sorted list, and its value as the tuple from the list_a converted into a list.
+The last statements print the results as per the instructions of the problem.
